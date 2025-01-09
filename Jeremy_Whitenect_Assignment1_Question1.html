@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript</title>
+    <!--The is the code that does not work because it is the only
+    one that attempts to load before the the h1. The second code
+    loads after the h1 because it uses window.onload and the the 
+    third code loads after the h1 because it's at the end-->
+    <script>
+        // Code One
+        document.getElementById("el").style.color = "red";
+    </script>
+
+    <script>
+        // Code Two
+        window.onload = function () {
+            document.getElementById("el2").style.color = "red";
+        }
+    </script>
+</head>
+<body>
+    <h1 id="el">Page Title</h1>
+    <script>
+        // Code Three
+        document.getElementById("el3").style.color = "red";
+    </script>
+</body>
+</html>
